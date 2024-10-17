@@ -1,27 +1,16 @@
 class Solution {
     public List<Integer> findDuplicates(int[] nums) {
-        int i = 0;
         List<Integer>ans=new ArrayList<>();
-        while (i < nums.length) {
-            int correct = nums[i] - 1;
-            if (nums[i] != nums[correct]) {
-                swap(nums, i, correct);
+        for(int i=0;i<nums.length;i++){
+            int n = Math.abs(nums[i]);
+            if(nums[n-1]<0){
+                ans.add(n);
             }
-            else {
-                i++;
-            }
-        }
-        for(int index=0;index<nums.length;index++){
-            if(nums[index]!=index+1){
-                ans.add(nums[index]);
+            else{
+                nums[n-1]=-1*nums[n-1];
             }
         }
         return ans;
     }
-    static void swap(int []arr,int first,int second){
-        int temp = arr[first];
-        arr[first]=arr[second];
-        arr[second]=temp;
 
-    }
 }
