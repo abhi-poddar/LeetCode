@@ -5,7 +5,7 @@ class Solution {
         if(bills[0] == 10 || bills[0] == 20){
             return false;
         }
-        for (int i = 0; i <= bills.length - 1; i++) {
+        for (int i = 0; i <= bills.length - 1 && i<1000; i++) {
             if (bills[i] == 5) {
                 five++;
             } else if (bills[i] == 10) {
