@@ -8,6 +8,7 @@ class Solution {
             mask <<= 1;
         }
 
+        System.gc();
         return count;
     }
 }
